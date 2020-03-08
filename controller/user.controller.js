@@ -23,7 +23,7 @@ module.exports.postOrder = (req, res) => {
 module.exports.getOrder = (req, res) => {
   const userId = req.params.userId;
   UserModel.findById(userId)
-    .populate("cart.items")
+    .populate("cart.items.foodId")
     .exec()
     .then(user => {
       res.send(user);
