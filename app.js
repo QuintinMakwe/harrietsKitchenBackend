@@ -5,9 +5,19 @@ const mongoose = require("mongoose");
 const url = "mongodb://localhost:27017/harrietKitchen";
 const userRoutes = require("./routes/user.products.routes");
 const adminRoutes = require("./routes/admin/admin.products.routes");
+const userModel = require("./model/user.model");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  userModel
+    .findById("5e653483da5ab92660e412dc")
+    .then(user => {
+      req.user = user;
+      next();
+    })
+    .catch(err => console.log("An error occured", err));
+});
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
 
