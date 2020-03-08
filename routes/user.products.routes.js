@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const userController = require("../controller/user.controller");
 
-router.get("/", (req, res) => {
-  res.send("dummy data for application to remain intact");
-});
+router.get("/getFood", userController.getFood);
 
 module.exports = router;
