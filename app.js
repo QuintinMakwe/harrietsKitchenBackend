@@ -8,6 +8,7 @@ const adminRoutes = require("./routes/admin/admin.products.routes");
 const userModel = require("./model/user.model");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.set("view engine", "ejs");
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   userModel
@@ -18,12 +19,11 @@ app.use((req, res, next) => {
     })
     .catch(err => console.log("An error occured", err));
 });
-app.use("/user", userRoutes);
-app.use("/admin", adminRoutes);
-
 app.get("/", (req, res) => {
   res.send("Welcome to Harriets kitchen");
 });
+app.use("/user", userRoutes);
+app.use("/admin", adminRoutes);
 
 app.listen(3000, () => {
   console.log("Connected out successfully....");

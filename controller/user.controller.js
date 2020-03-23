@@ -1,6 +1,9 @@
 const FoodModel = require("../model/food.models");
 const UserModel = require("../model/user.model");
 
+module.exports.home = (req, res) => {
+  res.render("../view/index.ejs");
+};
 module.exports.getFood = (req, res) => {
   FoodModel.find()
     .then(food => {

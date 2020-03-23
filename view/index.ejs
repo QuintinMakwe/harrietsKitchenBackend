@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/1b2a1dbdd1.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HarrietKitchen</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Lora&display=swap");
+      * {
+        margin: o;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lora";
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        font-size: 16px;
+      }
+      :root {
+        --primary-color: #050607;
+        --secondary-color: #cd9933;
+        --text-color: #f0f0f0;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--primary-color);
+        height: 50px;
+      }
+
+      .logo {
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      header p span {
+        color: var(--secondary-color);
+      }
+
+      nav li {
+        list-style: none;
+        display: inline;
+        cursor: pointer;
+        margin-right: 3px;
+      }
+
+      nav li:hover {
+        border-bottom: 3px solid rgba(205, 153, 51, 0.8);
+        color: RGBA(205, 153, 51, 1);
+        transition: all 0.4s ease-in;
+      }
+
+      .courosel {
+        background-image: url("./assets/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg");
+        height: calc(100vh - 70px);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .courosel::before {
+        content: "";
+        position: absolute;
+        top: 58px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 58px);
+        background-color: rgb(54, 54, 54, 0.3);
+        z-index: 1;
+      }
+
+      .courosel form {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+        width: 375px;
+        float: right;
+      }
+
+      .courosel form label {
+        font-size: 38px;
+        font-weight: 700;
+        color: var(--secondary-color);
+        background-color: transparent;
+      }
+
+      .courosel form input {
+        height: 60px;
+        outline: none;
+        background: transparent;
+        line-height: 1.2;
+        color: var(--text-color);
+        font-size: 25px;
+        border-bottom: 3px solid var(--secondary-color);
+        border-top: none;
+        border-right: none;
+        border-left: none;
+      }
+
+      .courosel i {
+        color: var(--secondary-color);
+        background-color: transparent;
+        margin-top: 20px;
+        position: relative;
+        left: 320px;
+        width: 30px;
+      }
+
+      .courosel i:hover {
+        color: var(--text-color);
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="#"
+          ><p class="logo">Harriets<span>Kitchen</span></p></a
+        >
+        <nav>
+          <ul>
+            <a href="#"><li>Menu</li></a>
+            <a href="#"><li>About Us</li></a>
+            <a href="#"><li>How It works</li></a>
+          </ul>
+        </nav>
+      </header>
+      <div class="courosel">
+        <form action="">
+          <label for="userName">Want to get started?</label>
+          <input type="text" placeholder="Let's Get to Know You " />
+          <i class="fas fa-door-open fa-2x"></i>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
